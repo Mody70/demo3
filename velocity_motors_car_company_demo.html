@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Velocity Motors | معرض سيارات فاخر</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#07080b;--panel:#101219;--panel2:#171a24;--text:#f7f7f8;--muted:#a1a7b3;
+  --line:rgba(255,255,255,.09);--silver:#d8dde7;--red:#d71920;--red2:#ff3b3f;
+  --blue:#4f8cff;--shadow:0 24px 80px rgba(215,25,32,.14)
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Cairo,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.75;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background:
+radial-gradient(circle at 15% 5%,rgba(215,25,32,.18),transparent 26%),
+radial-gradient(circle at 90% 10%,rgba(79,140,255,.12),transparent 26%),
+linear-gradient(transparent 96%,rgba(255,255,255,.035) 97%),
+linear-gradient(90deg,transparent 96%,rgba(255,255,255,.035) 97%);
+background-size:auto,auto,46px 46px,46px 46px;z-index:-1}
+a{text-decoration:none;color:inherit}img{max-width:100%;display:block}
+.container{width:min(1220px,calc(100% - 32px));margin:auto}
+header{position:sticky;top:0;z-index:50;background:rgba(7,8,11,.78);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:16px 0}
+.logo{display:flex;align-items:center;gap:12px;font-size:27px;font-weight:900;letter-spacing:-1px}
+.logo-mark{width:52px;height:38px;border:2px solid var(--red);border-radius:12px;display:grid;place-items:center;color:var(--red);font-weight:900;transform:skew(-10deg)}
+.links{display:flex;gap:22px;font-size:13px;font-weight:900;color:var(--muted)}
+.links a:hover{color:var(--red2)}
+.btn{border:0;border-radius:999px;padding:13px 22px;background:var(--red);color:white;font-family:Cairo,sans-serif;font-weight:900;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;box-shadow:0 18px 55px rgba(215,25,32,.2)}
+.btn.light{background:rgba(255,255,255,.06);border:1px solid var(--line);box-shadow:none}
+.btn.silver{background:var(--silver);color:#111827;box-shadow:0 18px 55px rgba(216,221,231,.12)}
+.hero{padding:34px 0 46px}
+.hero-wrap{border:1px solid var(--line);background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border-radius:44px;overflow:hidden;position:relative;min-height:760px;display:grid;grid-template-columns:.88fr 1.12fr}
+.hero-copy{padding:50px;position:relative;z-index:2;display:flex;flex-direction:column;justify-content:space-between}
+.badge{display:inline-flex;width:max-content;border:1px solid rgba(215,25,32,.3);background:rgba(215,25,32,.08);color:#ffb3b5;border-radius:999px;padding:8px 14px;font-size:13px;font-weight:900;margin-bottom:18px}
+h1{font-size:clamp(46px,6.8vw,92px);line-height:.98;font-weight:900;letter-spacing:-4px;text-transform:uppercase}
+h1 span{color:var(--red2)}
+.hero-copy p{color:var(--muted);font-size:18px;max-width:560px;margin-top:22px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:36px}
+.stat{background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:22px;padding:18px}
+.stat strong{font-size:32px;color:var(--red2);display:block;line-height:1;font-weight:900}.stat span{font-size:12px;color:var(--muted);font-weight:800}
+.hero-car{position:relative;overflow:hidden;min-height:760px}
+.hero-car:before{content:"VELOCITY";position:absolute;left:20px;top:40px;font-size:120px;font-weight:900;letter-spacing:-7px;color:rgba(255,255,255,.035);z-index:1}
+.hero-car img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:contrast(1.08) saturate(.9)}
+.hero-car:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,8,11,.75),transparent 45%,rgba(7,8,11,.15))}
+.float-card{position:absolute;right:28px;bottom:28px;background:rgba(7,8,11,.72);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.12);border-radius:28px;padding:22px;z-index:3;min-width:270px}
+.float-card strong{display:block;font-size:30px;color:var(--silver);font-weight:900;line-height:1}.float-card span{color:var(--muted);font-size:13px;font-weight:800}
+section{padding:72px 0}
+.section-title{display:flex;justify-content:space-between;align-items:end;gap:26px;margin-bottom:30px}
+.eyebrow{color:var(--red2);font-size:13px;font-weight:900;margin-bottom:8px;letter-spacing:.7px;text-transform:uppercase}
+h2{font-size:clamp(34px,4.6vw,62px);line-height:1.05;font-weight:900;letter-spacing:-3px;text-transform:uppercase}
+.section-title p{max-width:560px;color:var(--muted);font-size:17px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:32px;overflow:hidden;box-shadow:0 18px 55px rgba(0,0,0,.22)}
+.car-card img{height:285px;width:100%;object-fit:cover;filter:contrast(1.05)}
+.card-pad{padding:25px}
+.card h3{font-size:25px;font-weight:900;margin-bottom:8px}
+.card p,.card li{color:var(--muted);font-size:15px}
+.price{font-size:28px;font-weight:900;color:var(--red2);margin:10px 0}
+.meta{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
+.meta span{background:rgba(255,255,255,.06);border:1px solid var(--line);padding:6px 10px;border-radius:999px;font-size:12px;font-weight:800;color:#d1d5db}
+.feature{padding:26px;transition:.25s}.feature:hover{transform:translateY(-5px);border-color:rgba(215,25,32,.32)}
+.icon{width:64px;height:64px;border-radius:20px;background:rgba(215,25,32,.12);border:1px solid rgba(215,25,32,.25);display:grid;place-items:center;font-size:30px;margin-bottom:16px}
+.showcase{display:grid;grid-template-columns:1.15fr .85fr;gap:22px}
+.showcase-main{position:relative;min-height:620px;border-radius:42px;overflow:hidden;border:1px solid var(--line);box-shadow:0 28px 80px rgba(0,0,0,.28)}
+.showcase-main img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.showcase-main:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent,rgba(0,0,0,.82))}
+.showcase-text{position:absolute;right:28px;left:28px;bottom:28px;z-index:2}
+.showcase-text h3{font-size:44px;line-height:1.05;font-weight:900}
+.showcase-text p{color:rgba(255,255,255,.72);max-width:620px}
+.compare{display:grid;gap:14px}
+.compare-row{background:var(--panel);border:1px solid var(--line);border-radius:26px;padding:20px;display:flex;justify-content:space-between;gap:16px;align-items:center}
+.compare-row strong{font-size:20px}.compare-row span{color:var(--muted);font-weight:800}
+.dark-band{background:linear-gradient(135deg,#111827,#050505);border-block:1px solid var(--line)}
+.finance{display:grid;grid-template-columns:.9fr 1.1fr;gap:22px;align-items:center}
+.finance-box{background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:38px;padding:32px}
+.finance-box h3{font-size:36px;margin-bottom:12px}
+.finance-list{display:grid;gap:12px}
+.finance-item{background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:24px;padding:18px}
+ul{list-style:none;display:grid;gap:10px;margin-top:16px}
+li{position:relative;padding-right:28px}
+li:before{content:"";position:absolute;right:0;top:9px;width:12px;height:12px;border-radius:50%;background:var(--red2)}
+.service-step{padding:26px}.service-step .num{width:58px;height:58px;border-radius:18px;background:var(--red);display:grid;place-items:center;font-weight:900;font-size:22px;margin-bottom:18px}
+.testimonial{padding:26px}.stars{color:#fbbf24;font-size:24px;margin-bottom:12px}
+.contact{display:grid;grid-template-columns:.9fr 1.1fr;gap:22px}
+.contact-box{background:var(--panel);border:1px solid var(--line);border-radius:38px;padding:34px}
+.form{background:linear-gradient(135deg,#161922,#090a0d);border:1px solid var(--line);border-radius:38px;padding:30px}
+.form input,.form select,.form textarea{width:100%;border:1px solid var(--line);outline:0;border-radius:16px;padding:15px 16px;margin-bottom:12px;font-family:Cairo,sans-serif;background:rgba(255,255,255,.06);color:white}
+.form option{color:#111}.form textarea{min-height:120px;resize:vertical}
+footer{padding:42px 0;background:#030305;border-top:1px solid var(--line);margin-top:40px}
+footer .container{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+footer p{color:rgba(255,255,255,.48)}
+@media(max-width:980px){.hero-wrap,.grid3,.grid4,.grid2,.showcase,.finance,.contact{grid-template-columns:1fr}.hero-car{min-height:480px}.hero-wrap{min-height:auto}.links{display:none}.section-title{display:block}.section-title p{margin-top:12px}.hero-stats{grid-template-columns:1fr}}
+@media(max-width:600px){.hero-copy{padding:30px}.hero-wrap,.form,.contact-box{border-radius:28px}h1{font-size:44px}.hero-car{min-height:360px}.float-card{position:static;margin:16px}}
+</style>
+</head>
+<body>
+
+<header>
+<div class="container nav">
+<a class="logo" href="#"><span class="logo-mark">VM</span><span>Velocity Motors</span></a>
+<nav class="links">
+<a href="#cars">السيارات</a>
+<a href="#features">الخدمات</a>
+<a href="#finance">التمويل</a>
+<a href="#steps">طريقة الشراء</a>
+<a href="#contact">تجربة قيادة</a>
+</nav>
+<a class="btn" href="#contact">احجز تجربة</a>
+</div>
+</header>
+
+<main>
+
+<section class="hero">
+<div class="container">
+<div class="hero-wrap">
+
+<div class="hero-copy">
+<div>
+<div class="badge">Luxury Cars • New & Certified</div>
+<h1>اختار عربيتك الجاية <span>بثقة وسرعة.</span></h1>
+<p>
+Velocity Motors معرض سيارات فاخر يقدم سيارات جديدة ومستعملة معتمدة،
+تمويل مرن، فحص شامل، وتجربة قيادة قبل القرار.
+</p>
+<div class="hero-actions">
+<a class="btn" href="#cars">شاهد السيارات</a>
+<a class="btn light" href="#contact">احجز Test Drive</a>
+</div>
+</div>
+
+<div class="hero-stats">
+<div class="stat"><strong>+180</strong><span>سيارة متاحة</span></div>
+<div class="stat"><strong>0%</strong><span>مقدم لبعض الموديلات</span></div>
+<div class="stat"><strong>24h</strong><span>رد على طلبك</span></div>
+</div>
+</div>
+
+<div class="hero-car">
+<img src="https://images.pexels.com/photos/120049/pexels-photo-120049.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="سيارة فاخرة">
+<div class="float-card">
+<strong>Mercedes C-Class</strong>
+<span>موديل 2024 • تقسيط حتى 7 سنوات</span>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<section id="cars">
+<div class="container">
+<div class="section-title">
+<div>
+<div class="eyebrow">Featured Cars</div>
+<h2>سيارات مختارة للبيع</h2>
+</div>
+<p>
+موديلات مختارة بعناية، فحص شامل، وأسعار واضحة مع إمكانية التمويل.
+</p>
+</div>
+
+<div class="grid3">
+
+<div class="card car-card">
+<img src="https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="BMW">
+<div class="card-pad">
+<h3>BMW 320i Sport Line</h3>
+<div class="price">من 2,850,000 جنيه</div>
+<p>موديل 2023، حالة ممتازة، فحص كامل، جاهزة للترخيص.</p>
+<div class="meta"><span>2023</span><span>Automatic</span><span>18,000 كم</span></div>
+<a class="btn light" href="#contact">اطلب التفاصيل</a>
+</div>
+</div>
+
+<div class="card car-card">
+<img src="https://images.pexels.com/photos/3954451/pexels-photo-3954451.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Mercedes">
+<div class="card-pad">
+<h3>Mercedes C200 AMG</h3>
+<div class="price">من 3,950,000 جنيه</div>
+<p>Luxury Package، صيانة توكيل، ضمان ممتد اختياري.</p>
+<div class="meta"><span>2024</span><span>AMG</span><span>Zero</span></div>
+<a class="btn light" href="#contact">اطلب التفاصيل</a>
+</div>
+</div>
+
+<div class="card car-card">
+<img src="https://images.pexels.com/photos/3802510/pexels-photo-3802510.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Audi">
+<div class="card-pad">
+<h3>Audi Q3 S-Line</h3>
+<div class="price">من 3,400,000 جنيه</div>
+<p>SUV مدمجة، مناسبة للعائلة، أداء قوي واستهلاك ممتاز.</p>
+<div class="meta"><span>2023</span><span>SUV</span><span>22,000 كم</span></div>
+<a class="btn light" href="#contact">اطلب التفاصيل</a>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<section>
+<div class="container showcase">
+<div class="showcase-main">
+<img src="https://images.pexels.com/photos/358070/pexels-photo-358070.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="سيارة رياضية">
+<div class="showcase-text">
+<h3>تجربة قيادة قبل القرار</h3>
+<p>
+احجز موعد، جرّب العربية، افحصها براحتك، وخد عرض تمويل مناسب قبل التعاقد.
+</p>
+</div>
+</div>
+
+<div class="compare">
+<div class="compare-row"><strong>فحص شامل</strong><span>موتور • عفشة • دهان</span></div>
+<div class="compare-row"><strong>تجربة قيادة</strong><span>داخل المعرض أو موعد خاص</span></div>
+<div class="compare-row"><strong>تمويل مرن</strong><span>أنظمة حتى 84 شهر</span></div>
+<div class="compare-row"><strong>استبدال</strong><span>بيع عربيتك القديمة وبدّل</span></div>
+<div class="compare-row"><strong>ترخيص</strong><span>مساعدة في الإجراءات</span></div>
+</div>
+</div>
+</section>
+
+<section id="features">
+<div class="container">
+<div class="section-title">
+<div>
+<div class="eyebrow">Services</div>
+<h2>مش مجرد معرض سيارات</h2>
+</div>
+<p>
+بنساعدك تختار، تفحص، تمول، وترخص عربيتك بدون دوشة.
+</p>
+</div>
+
+<div class="grid4">
+
+<div class="card feature">
+<div class="icon">🔍</div>
+<h3>فحص فني</h3>
+<p>تقرير واضح عن حالة السيارة قبل الشراء.</p>
+</div>
+
+<div class="card feature">
+<div class="icon">💳</div>
+<h3>تمويل وتقسيط</h3>
+<p>خطط دفع مرنة مع أكثر من جهة تمويل.</p>
+</div>
+
+<div class="card feature">
+<div class="icon">🔁</div>
+<h3>استبدال</h3>
+<p>بدّل سيارتك القديمة وادفع الفرق.</p>
+</div>
+
+<div class="card feature">
+<div class="icon">🛡️</div>
+<h3>ضمان</h3>
+<p>خيارات ضمان ممتد لبعض السيارات.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="dark-band" id="finance">
+<div class="container finance">
+
+<div class="finance-box">
+<div class="eyebrow">Finance</div>
+<h2>امتلك سيارتك بخطة دفع مناسبة</h2>
+<p>
+اختار مقدم ومدة تقسيط مناسبة، وفريقنا يجهز لك أفضل عرض تمويلي متاح حسب موديل السيارة.
+</p>
+
+<ul>
+<li>مقدم يبدأ من 0% لبعض الموديلات</li>
+<li>تقسيط حتى 84 شهر</li>
+<li>إجراءات بسيطة وسريعة</li>
+<li>إمكانية إضافة التأمين والترخيص</li>
+</ul>
+</div>
+
+<div class="finance-list">
+<div class="finance-item"><h3>Zero Down Payment</h3><p>اختيارات بدون مقدم حسب الموافقة الائتمانية.</p></div>
+<div class="finance-item"><h3>Flexible Installments</h3><p>مدة سداد مرنة تناسب دخلك الشهري.</p></div>
+<div class="finance-item"><h3>Trade-In Option</h3><p>استخدم قيمة سيارتك القديمة كمقدم.</p></div>
+</div>
+
+</div>
+</section>
+
+<section id="steps">
+<div class="container">
+<div class="section-title">
+<div>
+<div class="eyebrow">Buying Steps</div>
+<h2>اشتري عربيتك في 4 خطوات</h2>
+</div>
+<p>
+رحلة واضحة من أول اختيار السيارة حتى الاستلام.
+</p>
+</div>
+
+<div class="grid4">
+
+<div class="card service-step">
+<div class="num">1</div>
+<h3>اختيار السيارة</h3>
+<p>حدد الموديل والميزانية والخيارات المناسبة.</p>
+</div>
+
+<div class="card service-step">
+<div class="num">2</div>
+<h3>فحص وتجربة</h3>
+<p>احجز تجربة قيادة واطلع على تقرير الفحص.</p>
+</div>
+
+<div class="card service-step">
+<div class="num">3</div>
+<h3>عرض التمويل</h3>
+<p>اختر خطة دفع مناسبة أو نظام استبدال.</p>
+</div>
+
+<div class="card service-step">
+<div class="num">4</div>
+<h3>استلام</h3>
+<p>نساعدك في التعاقد والترخيص والاستلام.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="section-title">
+<div>
+<div class="eyebrow">Reviews</div>
+<h2>عملاء اشتروا بثقة</h2>
+</div>
+<p>
+تجربة شراء منظمة من أول الاختيار حتى الاستلام.
+</p>
+</div>
+
+<div class="grid3">
+<div class="card testimonial">
+<div class="stars">★★★★★</div>
+<p>اشتريت BMW مستعملة وكانت حالتها زي التقرير بالظبط. التعامل محترم جدًا.</p>
+<br><strong>محمد عادل</strong>
+</div>
+
+<div class="card testimonial">
+<div class="stars">★★★★★</div>
+<p>التمويل خلص بسرعة، وجربت العربية قبل ما أدفع أي حاجة. تجربة مريحة.</p>
+<br><strong>أحمد سامي</strong>
+</div>
+
+<div class="card testimonial">
+<div class="stars">★★★★★</div>
+<p>بدلت عربيتي القديمة وخدت موديل أحدث من غير تعقيد. أنصح بيهم.</p>
+<br><strong>كريم فؤاد</strong>
+</div>
+</div>
+</div>
+</section>
+
+<section id="contact">
+<div class="container contact">
+
+<div class="contact-box">
+<div class="eyebrow">Test Drive</div>
+<h2>احجز تجربة قيادة أو اطلب عرض سعر</h2>
+<p>
+سيب بياناتك، وفريق Velocity Motors هيتواصل معاك بتفاصيل السيارة وخطة الدفع المناسبة.
+</p>
+
+<ul>
+<li>تفاصيل كاملة عن السيارة</li>
+<li>حجز تجربة قيادة</li>
+<li>عرض تمويل مبدئي</li>
+<li>إمكانية الاستبدال</li>
+</ul>
+</div>
+
+<form class="form" onsubmit="event.preventDefault(); alert('تم إرسال الطلب بنجاح — هذا نموذج تجريبي');">
+<input type="text" placeholder="الاسم بالكامل" required>
+<input type="tel" placeholder="رقم الهاتف" required>
+<select required>
+<option value="">السيارة المهتم بها</option>
+<option>BMW 320i</option>
+<option>Mercedes C200</option>
+<option>Audi Q3</option>
+<option>سيارة أخرى</option>
+</select>
+<select>
+<option>نوع الطلب</option>
+<option>تجربة قيادة</option>
+<option>عرض تمويل</option>
+<option>استبدال سيارة</option>
+<option>استفسار عام</option>
+</select>
+<textarea placeholder="اكتب ملاحظتك أو الميزانية المتاحة"></textarea>
+<button class="btn" style="width:100%">إرسال الطلب</button>
+</form>
+
+</div>
+</section>
+
+</main>
+
+<footer>
+<div class="container">
+<a class="logo" href="#"><span class="logo-mark">VM</span><span>Velocity Motors</span></a>
+<p>© 2026 Velocity Motors — Demo Website</p>
+</div>
+</footer>
+
+</body>
+</html>
